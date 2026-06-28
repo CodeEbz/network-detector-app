@@ -1,0 +1,14 @@
+:root{--bg:#f7f8fb;--card:#ffffff;--accent:#0b5fff}
+*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+body,html,#root{height:100%;margin:0}
+.app{min-height:100vh;background:var(--bg);padding:28px 16px}
+.app header h1{margin:0 0 16px;font-size:20px}
+.detector{max-width:720px;background:var(--card);padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(20,20,40,0.06)}
+label{display:block;font-size:14px;color:#333}
+input[type="text"]{width:100%;padding:10px 12px;margin-top:8px;border:1px solid #e6e9ef;border-radius:6px}
+.buttons{margin-top:12px;display:flex;gap:8px}
+button{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+button:nth-child(2){background:#6b7280}
+button:nth-child(3){background:#10b981}
+.result{margin-top:14px}
+pre{background:#f3f4f6;padding:12px;border-radius:6px;white-space:pre-wrap}
