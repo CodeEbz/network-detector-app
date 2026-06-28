@@ -5,7 +5,8 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <h1>Network Detector</h1>
+        <p className="eyebrow">React app</p>
+        <h1>Neeza Network Detector</h1>
       </header>
       <main>
         <NetworkDetector />

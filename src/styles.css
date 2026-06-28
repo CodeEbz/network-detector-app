@@ -1,14 +1,181 @@
-:root{--bg:#f7f8fb;--card:#ffffff;--accent:#0b5fff}
-*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
-body,html,#root{height:100%;margin:0}
-.app{min-height:100vh;background:var(--bg);padding:28px 16px}
-.app header h1{margin:0 0 16px;font-size:20px}
-.detector{max-width:720px;background:var(--card);padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(20,20,40,0.06)}
-label{display:block;font-size:14px;color:#333}
-input[type="text"]{width:100%;padding:10px 12px;margin-top:8px;border:1px solid #e6e9ef;border-radius:6px}
-.buttons{margin-top:12px;display:flex;gap:8px}
-button{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
-button:nth-child(2){background:#6b7280}
-button:nth-child(3){background:#10b981}
-.result{margin-top:14px}
-pre{background:#f3f4f6;padding:12px;border-radius:6px;white-space:pre-wrap}
+:root {
+  --bg: #0f172a;
+  --panel: rgba(15, 23, 42, 0.82);
+  --card: #ffffff;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #dbe4f0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 45%, #f8fafc 100%);
+  color: var(--text);
+}
+
+.app {
+  min-height: 100vh;
+  padding: 32px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app header {
+  width: min(760px, 100%);
+  margin-bottom: 18px;
+}
+
+.app header h1 {
+  margin: 4px 0 0;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: #0f172a;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #2563eb;
+}
+
+.detector-card {
+  width: min(760px, 100%);
+  background: linear-gradient(145deg, rgba(255,255,255,0.98), rgba(248,250,252,0.96));
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+}
+
+.hero {
+  margin-bottom: 18px;
+}
+
+.hero h2 {
+  margin: 6px 0 8px;
+  font-size: 1.5rem;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.input-group {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.input-group span {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.16);
+}
+
+.buttons {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
+}
+
+button.secondary {
+  background: #64748b;
+  box-shadow: none;
+}
+
+button.success {
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  box-shadow: none;
+}
+
+.helper-text {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.result-panel {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.result-panel h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #334155;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .detector-card {
+    padding: 18px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
